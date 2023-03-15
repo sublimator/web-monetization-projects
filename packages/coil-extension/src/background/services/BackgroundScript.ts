@@ -42,6 +42,8 @@ import { BackgroundEvents } from './BackgroundEvents'
 
 import MessageSender = chrome.runtime.MessageSender
 
+const DISABLED = true
+
 @injectable()
 export class BackgroundScript {
   constructor(
@@ -109,6 +111,9 @@ export class BackgroundScript {
 
     this.popup.setDefaultInactive()
     this.requestDevExtensionUpdateCheck()
+    if (DISABLED) {
+      return
+    }
     void this.initAuth()
   }
 
