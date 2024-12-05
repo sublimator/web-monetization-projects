@@ -59,9 +59,10 @@ export class Frames {
      * Be wary of context invalidation during extension reloading causing
      * confusion here.
      */
-    this.window.addEventListener('unload', () => {
-      this.sendUnloadMessage()
-    })
+    // DISABLED
+    // this.window.addEventListener('unload', () => {
+    //   this.sendUnloadMessage()
+    // })
   }
 
   // iframe to FrameSpec
